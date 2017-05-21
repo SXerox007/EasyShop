@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context="com.example.dell.boo.AddToCart">
+
+    <TextView
+        style="@style/TextView"
+        android:drawableEnd="@drawable/edit_icon"
+        android:drawableRight="@drawable/edit_icon"
+        android:gravity="center"
+        android:paddingEnd="@dimen/padding_normal"
+        android:paddingLeft="@dimen/padding_large"
+        android:paddingRight="@dimen/padding_normal"
+        android:paddingStart="@dimen/padding_large"
+        android:text="Add To cart item Details:"
+        android:textColor="@color/textColor"
+        android:textSize="@dimen/font_large"
+        android:layout_margin="@dimen/margin_x_large"
+        />
+
+    <TextView
+        android:id="@+id/tvName"
+        style="@style/TextView"
+        android:gravity="center"
+        android:paddingEnd="@dimen/padding_normal"
+        android:paddingLeft="@dimen/padding_large"
+        android:paddingRight="@dimen/padding_normal"
+        android:paddingStart="@dimen/padding_large"
+        android:textColor="@color/textColor"
+        android:textSize="@dimen/font_large"
+        android:layout_margin="@dimen/margin_x_large"
+        />
+
+    <TextView
+        android:id="@+id/tvPrice"
+        style="@style/TextView"
+        android:gravity="center"
+        android:paddingEnd="@dimen/padding_normal"
+        android:paddingLeft="@dimen/padding_large"
+        android:paddingRight="@dimen/padding_normal"
+        android:paddingStart="@dimen/padding_large"
+        android:textColor="@color/textColor"
+        android:textSize="@dimen/font_large"
+        android:layout_margin="@dimen/margin_x_large"
+        />
+
+    <TextView
+        android:id="@+id/tvLocation"
+        style="@style/TextView"
+        android:gravity="center"
+        android:paddingEnd="@dimen/padding_normal"
+        android:paddingLeft="@dimen/padding_large"
+        android:paddingRight="@dimen/padding_normal"
+        android:paddingStart="@dimen/padding_large"
+        android:textColor="@color/textColor"
+        android:textSize="@dimen/font_large"
+        android:layout_margin="@dimen/margin_x_large"
+        />
+
+    <TextView
+        android:id="@+id/tvInfo"
+        style="@style/TextView"
+        android:gravity="center"
+        android:paddingEnd="@dimen/padding_normal"
+        android:paddingLeft="@dimen/padding_large"
+        android:paddingRight="@dimen/padding_normal"
+        android:paddingStart="@dimen/padding_large"
+        android:textColor="@color/textColor"
+        android:textSize="@dimen/font_large"/>
+
+    <Button
+        android:id="@+id/btnBuy"
+        android:layout_width="@dimen/btn_w"
+        android:layout_height="@dimen/btn_h"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="@dimen/margin_normal"
+        android:layout_marginEnd="@dimen/margin_medium"
+        android:layout_marginRight="@dimen/margin_normal"
+        android:background="@drawable/button"
+        android:gravity="center"
+        android:text="Buy Now"
+        android:textColor="@color/colorText"
+        android:textSize="@dimen/font_small"
+        android:layout_margin="@dimen/margin_x_large"
+        />
+
+
+</LinearLayout>

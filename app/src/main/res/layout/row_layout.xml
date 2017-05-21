@@ -46,8 +46,8 @@
                 android:src="@drawable/map" />
         </RelativeLayout>
 
-        <Button
-            android:id="@+id/btnAddCart"
+        <TextView
+            android:id="@+id/tvAddCart"
             android:layout_width="@dimen/btn_w"
             android:layout_height="@dimen/btn_h"
             android:layout_gravity="bottom|end"
@@ -56,6 +56,7 @@
             android:layout_marginRight="@dimen/margin_normal"
             android:background="@drawable/button"
             android:text="Add Cart"
+            android:gravity="center"
             android:textColor="@color/colorText"
             android:textSize="@dimen/font_small" />
     </FrameLayout>

@@ -3,7 +3,6 @@ package com.example.dell.boo;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -18,50 +17,47 @@ import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.firebase.client.Query;
-import com.firebase.client.ValueEventListener;
 
-/**
- * Created by Dell on 14-Apr-16.
- */
 public class NewContentActivty extends AppCompatActivity {
-    EditText email,pwd;
+    EditText email, pwd;
     ProgressBar progress;
-    public  static  String title;
-     ProgressDialog progressDialog = null;
+    public static String title;
+    ProgressDialog progressDialog = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
         progress = (ProgressBar) findViewById(R.id.progress);
-        email=(EditText)findViewById(R.id.edit_text_email);
-        pwd = (EditText)findViewById(R.id.edit_text_password);
+        email = (EditText) findViewById(R.id.edit_text_email);
+        pwd = (EditText) findViewById(R.id.edit_text_password);
 
     }
-public void onSignInPressed(View view){
 
-    String Email1 = email.getText().toString();
-   final String Email = Email1.replace(".com","");
-    final String password = pwd.getText().toString();
-   final Firebase ref = new Firebase("https://intense-fire-5197.firebaseio.com/");
-    progressDialog = ProgressDialog.show(this, "", "logging in... !!!", true);
+    public void onSignInPressed(View view) {
 
-    ref.authWithPassword(Email1, password, new Firebase.AuthResultHandler() {
-        @Override
-        public void onAuthenticated(AuthData authData) {
+        String Email1 = email.getText().toString();
+        final String Email = Email1.replace(".com", "");
+        final String password = pwd.getText().toString();
+        final Firebase ref = new Firebase("https://intense-fire-5197.firebaseio.com/");
+        progressDialog = ProgressDialog.show(this, "", "logging in... !!!", true);
 
-            progressDialog.dismiss();
-            //System.out.println("User ID: " + authData.getUid() + ", Provider: " + authData.getProvider());
+        ref.authWithPassword(Email1, password, new Firebase.AuthResultHandler() {
+            @Override
+            public void onAuthenticated(AuthData authData) {
+
+                progressDialog.dismiss();
+                //System.out.println("User ID: " + authData.getUid() + ", Provider: " + authData.getProvider());
 //            Toast.makeText(getBaseContext(),"User ID:" + authData.getUid() + ", Provider:" + authData.getProvider(),Toast.LENGTH_LONG).show();
-            startnewactivty();
-            Toast.makeText(getBaseContext(), "Welcome !", Toast.LENGTH_LONG).show();
-            Firebase  refw = new  Firebase("https://intense-fire-5197.firebaseio.com/users");
-            Query query = refw.orderByChild("id").equalTo(Email);
+                startnewactivty();
+                Toast.makeText(getBaseContext(), "Welcome !", Toast.LENGTH_LONG).show();
+                Firebase refw = new Firebase("https://intense-fire-5197.firebaseio.com/users");
+                Query query = refw.orderByChild("id").equalTo(Email);
                 query.addChildEventListener(new ChildEventListener() {
                     @Override
                     public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                         title= dataSnapshot.getKey();
-                       // Toast.makeText(getBaseContext(), title,Toast.LENGTH_LONG).show();
+                        title = dataSnapshot.getKey();
+                        // Toast.makeText(getBaseContext(), title,Toast.LENGTH_LONG).show();
                     }
 
                     @Override
@@ -127,41 +123,38 @@ public void onSignInPressed(View view){
 // Attach an listener to read the data at our posts reference
 
 
-
-
-
-        }
-
-        @Override
-        public void onAuthenticationError(FirebaseError firebaseError) {
-            // there was an error
-
-            switch (firebaseError.getCode()) {
-                case FirebaseError.USER_DOES_NOT_EXIST:
-                    progressDialog.dismiss();
-                    Toast.makeText(getBaseContext(),"User ain't exists !",Toast.LENGTH_LONG).show();
-                    break;
-                case FirebaseError.INVALID_PASSWORD:
-                    // handle an invalid password
-                    progressDialog.dismiss();
-                    Toast.makeText(getBaseContext(),"password isn't correct !",Toast.LENGTH_LONG).show();
-
-                    break;
-                case FirebaseError.NETWORK_ERROR:
-                    progressDialog.dismiss();
-                    Toast.makeText(getBaseContext(),"Check your internet conn. !",Toast.LENGTH_LONG).show();
-                   break;
-
-                default:
-                    progressDialog.dismiss();
-                    Toast.makeText(getBaseContext(),"User and password aren't correct !",Toast.LENGTH_LONG).show();
-
-                    // handle other errors
-                    break;
             }
-        }
-    });
-}
+
+            @Override
+            public void onAuthenticationError(FirebaseError firebaseError) {
+                // there was an error
+
+                switch (firebaseError.getCode()) {
+                    case FirebaseError.USER_DOES_NOT_EXIST:
+                        progressDialog.dismiss();
+                        Toast.makeText(getBaseContext(), "User ain't exists !", Toast.LENGTH_LONG).show();
+                        break;
+                    case FirebaseError.INVALID_PASSWORD:
+                        // handle an invalid password
+                        progressDialog.dismiss();
+                        Toast.makeText(getBaseContext(), "password isn't correct !", Toast.LENGTH_LONG).show();
+
+                        break;
+                    case FirebaseError.NETWORK_ERROR:
+                        progressDialog.dismiss();
+                        Toast.makeText(getBaseContext(), "Check your internet conn. !", Toast.LENGTH_LONG).show();
+                        break;
+
+                    default:
+                        progressDialog.dismiss();
+                        Toast.makeText(getBaseContext(), "User and password aren't correct !", Toast.LENGTH_LONG).show();
+
+                        // handle other errors
+                        break;
+                }
+            }
+        });
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -174,7 +167,7 @@ public void onSignInPressed(View view){
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if(id==R.id.action_settings){
+        if (id == R.id.action_settings) {
             finish();
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -190,12 +183,13 @@ public void onSignInPressed(View view){
 
     }
 
-    public void startnewactivty(){
-    startActivity(new Intent(this, Details.class));
+    public void startnewactivty() {
+        startActivity(new Intent(this, Details.class));
 
-}
-public void onSignUpPressed(View v){
-    startActivity(new Intent(this,MainActivity.class));
-}
+    }
+
+    public void onSignUpPressed(View v) {
+        startActivity(new Intent(this, MainActivity.class));
+    }
 
 }

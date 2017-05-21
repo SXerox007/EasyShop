@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    tools:context="com.example.dell.boo.AddressActivity"
+    android:orientation="vertical"
+    >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    <TextView
+        style="@style/TextView"
+        android:drawableEnd="@drawable/edit_icon"
+        android:drawableRight="@drawable/edit_icon"
+        android:gravity="center"
+        android:paddingEnd="@dimen/padding_normal"
+        android:paddingLeft="@dimen/padding_large"
+        android:paddingRight="@dimen/padding_normal"
+        android:paddingStart="@dimen/padding_large"
+        android:text="Details"
+        android:textColor="@color/textColor"
+        android:textSize="@dimen/font_large"
+        />
+
+    <EditText
+        android:layout_margin="@dimen/margin_medium"
+        android:id="@+id/edit_text_Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:hint="Name"
+        android:imeOptions="actionDone"
+        android:inputType="text"
+        android:padding="@dimen/edit_text_padding"
+        android:textColor="@color/black"
+        android:textColorHint="@color/dark_grey"
+        android:textSize="@dimen/login_buttons_text_size" />
+    <EditText
+        android:layout_margin="@dimen/margin_medium"
+        android:id="@+id/edit_text_Address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:hint="Address"
+        android:imeOptions="actionDone"
+        android:inputType="text"
+        android:padding="@dimen/edit_text_padding"
+        android:textColor="@color/black"
+        android:textColorHint="@color/dark_grey"
+        android:textSize="@dimen/login_buttons_text_size" />
+    <EditText
+        android:layout_margin="@dimen/margin_medium"
+        android:id="@+id/edit_text_pin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:hint="Pin code"
+        android:imeOptions="actionDone"
+        android:inputType="number"
+        android:padding="@dimen/edit_text_padding"
+        android:textColor="@color/black"
+        android:textColorHint="@color/dark_grey"
+        android:textSize="@dimen/login_buttons_text_size" />
+    <EditText
+        android:layout_margin="@dimen/margin_medium"
+        android:id="@+id/edit_text_State"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:hint="State"
+        android:imeOptions="actionDone"
+        android:inputType="text"
+        android:padding="@dimen/edit_text_padding"
+        android:textColor="@color/black"
+        android:textColorHint="@color/dark_grey"
+        android:textSize="@dimen/login_buttons_text_size" />
+    <EditText
+        android:layout_margin="@dimen/margin_medium"
+        android:id="@+id/edit_text_contact_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:hint="Contact Number"
+        android:imeOptions="actionDone"
+        android:inputType="number"
+        android:padding="@dimen/edit_text_padding"
+        android:textColor="@color/black"
+        android:maxLength="11"
+        android:textColorHint="@color/dark_grey"
+        android:textSize="@dimen/login_buttons_text_size" />
+
+        <Button
+            android:id="@+id/btnProceedTocheckout"
+            android:layout_width="@dimen/btn_w"
+            android:layout_height="@dimen/btn_h"
+            android:layout_gravity="bottom|end"
+            android:layout_marginBottom="@dimen/margin_normal"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:layout_marginRight="@dimen/margin_normal"
+            android:background="@drawable/button"
+            android:gravity="center"
+            android:text="Check out"
+            android:textColor="@color/colorText"
+            android:textSize="@dimen/font_small"
+            android:layout_margin="@dimen/margin_x_large"
+            />
+    </LinearLayout>
+    </ScrollView>
+</LinearLayout>
